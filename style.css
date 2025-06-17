@@ -1,0 +1,322 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Header */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 20px 40px;
+    background: rgba(222, 62, 201, 0.8);
+    backdrop-filter: blur(12px);
+    z-index: 1000;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav .logo {
+    font-size: 28px;
+    color:black;
+    font-weight: bold;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: black;
+}
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    background: url('css.jpg') center/cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.hero-content h2 {
+    font-size: 64px;
+    color: #fff;
+}
+
+.hero-content p {
+    font-size: 24px;
+    color: red;
+    margin-bottom: 20px;
+}
+
+.btn {
+    background-color: black;
+    color: yellow;
+    padding: 12px 36px;
+    border: none;
+    border-radius: 30px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.btn:hover {
+    transform: translateY(-4px);
+}
+
+/* GIF Section */
+.gif {
+    margin-top: 30px;
+    background: url('gif background.jpg') center/cover;
+}
+
+.gif img {
+    height: 200px;
+    width: 150px;
+   
+}
+
+/* Hotels Section */
+.hotels {
+    padding: 80px 40px;
+    background-color: #fff;
+    text-align: center;
+}
+
+.hotels h1 {
+    font-size: 36px;
+    margin-bottom: 40px;
+    color: #000;
+}
+
+.hotel-container {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+}
+
+/* Hotel Card Styling */
+.hotel-card {
+    width: 320px;
+    height: 400px;
+    perspective: 1000px;
+}
+
+.card-inner {
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+.hotel-card:hover .card-inner {
+    transform: rotateY(180deg);
+}
+
+/* Front and Back of Card */
+.front, .back {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    border-radius: 12px;
+    backface-visibility: hidden;
+}
+
+.front {
+    background-color: #000;
+}
+
+.front img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.back {
+    background-color: #1a1a1a;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transform: rotateY(180deg);
+    padding: 20px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+.back h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.back p {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+/* Price */
+.price {
+    font-size: 20px;
+    color: #ff9900;
+    margin-bottom: 12px;
+}
+
+/* Map Link Styling */
+.map-link {
+    margin-top: 10px;
+}
+
+.map-link a {
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: rgb(247, 0, 255);
+    color: #fff;
+    font-size: 14px;
+    border-radius: 20px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.map-link a:hover {
+    background-color:red;
+}
+
+/* Booking Form */
+.booking-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.8);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.booking-form {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 400px;
+    position: relative;
+}
+
+.booking-form h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.booking-form input,
+.booking-form select,
+.booking-form button {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 12px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+}
+
+.booking-form button {
+    background-color: red;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.booking-form button:hover {
+    background-color: #ff4d4d;
+}
+
+.close-btn {
+    position: absolute;
+    top: 8px;
+    right: 12px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* Footer */
+footer {
+    padding: 20px;
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+}
+
+.social-icons {
+    margin-top: 10px;
+}
+
+.social-icons a {
+    color: #fff;
+    font-size: 20px;
+    margin: 0 10px;
+    display: inline-block;
+    transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: red;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    nav ul {
+        display: none;
+    }
+
+    .hotel-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .hotel-card {
+        width: 100%;
+    }
+
+    .hero-content h2 {
+        font-size: 36px;
+    }
+
+    .hero-content p {
+        font-size: 18px;
+    }
+}
